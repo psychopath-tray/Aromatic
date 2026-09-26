@@ -11,22 +11,6 @@
 
 Aromatic runs directly on the business's own computer. Orders, customers, receipts, and backups are stored in a local SQLite database, allowing counter service and kitchen displays to continue operating without an internet connection. No hosted or cloud account is required for core POS operation. Optional integrations—such as Google Drive backup, WhatsApp bill delivery, and cloud-connected reporting—can be enabled when needed.
 
-## Get Aromatic
-
-Download the latest installer from [GitHub Releases](https://github.com/FreeOpenSourcePOS/Aromatic/releases), or install through your platform's app store:
-
-<p>
-  <a href="https://apps.apple.com/in/app/flo-cafe/id6763136018">
-    <img src="https://img.shields.io/badge/Mac_App_Store-Download-black?logo=apple&style=for-the-badge" alt="Download on the Mac App Store">
-  </a>
-  <a href="https://apps.microsoft.com/detail/9n1md6585p4q">
-    <img src="https://img.shields.io/badge/Microsoft_Store-Download-0078D4?logo=microsoft&style=for-the-badge" alt="Download from Microsoft Store">
-  </a>
-  <a href="https://snapcraft.io/Aromatic">
-    <img src="https://img.shields.io/badge/Snap-Install-82BEA0?logo=snapcraft&logoColor=white&style=for-the-badge" alt="Install from the Snap Store">
-  </a>
-</p>
-
 Releases include Windows installers, macOS DMGs, and Linux AppImage, `.deb`,
 `.rpm`, and Snap packages. For Linux package-specific installation and update
 behavior, FUSE setup, printing permissions, and tray behavior, see [Linux
