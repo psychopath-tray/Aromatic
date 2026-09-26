@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Download Aromatic
+    url: https://flopos.com/download
+    about: Get the latest packaged release before reporting an issue.
+  - name: Aromatic documentation
+    url: https://flopos.com/documentation
+    about: Setup, installation, printers, backups, and operating guidance.
+  - name: Architecture & general discussions
+    url: https://github.com/FreeOpenSourcePOS/Aromatic/discussions
+    about: Propose architecture changes, ask questions, or discuss early ideas.
+  - name: Report a security vulnerability
+    url: https://github.com/FreeOpenSourcePOS/Aromatic/security/advisories/new
+    about: Report potential vulnerabilities privately per SECURITY.md.

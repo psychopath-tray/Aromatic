@@ -1,0 +1,9 @@
+{
+  "format": "Aromatic-merchant-print-template",
+  "documentType": "receipt",
+  "schemaVersion": 1,
+  "blocks": [
+    { "kind": "totals" },
+    { "kind": "totals" }
+  ]
+}
