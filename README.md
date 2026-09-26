@@ -2,18 +2,7 @@
   <h1>Aromatic</h1>
   <p><a href="README.es.md">Español</a> · <a href="README.pt.md">Português</a> · <a href="README.fr.md">Français</a> · <a href="README.tr.md">Türkçe</a> · <a href="README.fil.md">Filipino</a> · <a href="README.de.md">Deutsch</a> · <a href="README.zh-CN.md">简体中文</a> · <a href="README.ar.md">العربية</a> · <a href="README.ur.md">اردو</a></p>
   <p><strong>Free, open-source, offline-first point of sale for cafés, restaurants, and small kitchens.</strong></p>
-  <p>
-    <a href="https://flopos.com">Website</a> ·
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/releases">Download</a> ·
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/issues">Report a bug</a>
-  </p>
-  <p>
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/releases"><img src="https://img.shields.io/github/v/release/FreeOpenSourcePOS/Aromatic?label=latest%20release" alt="Latest release"></a>
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/releases"><img src="https://img.shields.io/github/downloads/FreeOpenSourcePOS/Aromatic/total?label=release%20downloads" alt="Total release downloads"></a>
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/blob/main/LICENSE"><img src="https://img.shields.io/github/license/FreeOpenSourcePOS/Aromatic" alt="MIT License"></a>
-    <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue" alt="Windows, macOS, and Linux">
-    <a href="https://github.com/FreeOpenSourcePOS/Aromatic/actions/workflows/ci.yml"><img src="https://github.com/FreeOpenSourcePOS/Aromatic/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
-  </p>
+
 </div>
 
 <p align="center">
