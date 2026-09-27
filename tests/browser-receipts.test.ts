@@ -366,7 +366,7 @@ async function run() {
 
     // Urdu
     const urTenant = {
-      business_name: 'Flo Cafe Lahore',
+      business_name: 'Aromatic Cafe Lahore',
       currency: 'PKR',
       country: 'PK',
       timezone: 'Asia/Karachi',

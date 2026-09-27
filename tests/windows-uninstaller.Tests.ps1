@@ -11,7 +11,7 @@ BeforeAll {
   . $uninstallerPath
 }
 
-Describe 'Flo Cafe Windows uninstaller' {
+Describe 'Aromatic Cafe Windows uninstaller' {
   It 'resolves Keep/Delete before looking for a process to terminate' {
     $events = New-Object 'System.Collections.Generic.List[string]'
 
@@ -62,17 +62,17 @@ Describe 'Flo Cafe Windows uninstaller' {
   }
 
   It 'bounds a hung child uninstaller and continues with manual cleanup' {
-    $uninstallerExe = 'C:\Flo Cafe\uninstall.exe'
-    $fallbackInstallPath = 'C:\Flo Cafe Fixture\Programs\Flo Cafe'
+    $uninstallerExe = 'C:\Aromatic Cafe\uninstall.exe'
+    $fallbackInstallPath = 'C:\Aromatic Cafe Fixture\Programs\Aromatic Cafe'
     $intermediateId = 9899
     $descendantId = 9900
     $lateDescendantId = 9902
     $entry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
-      InstallLocation = 'C:\Flo Cafe'
-      UninstallString = '"C:\Flo Cafe\uninstall.exe" /D=C:\Flo Cafe'
+      InstallLocation = 'C:\Aromatic Cafe'
+      UninstallString = '"C:\Aromatic Cafe\uninstall.exe" /D=C:\Aromatic Cafe'
     }
     $child = [pscustomobject]@{ Id = 9898; ExitCode = 0 }
     $child | Add-Member -MemberType ScriptMethod -Name WaitForExit -Value {
@@ -135,7 +135,7 @@ Describe 'Flo Cafe Windows uninstaller' {
     }
 
     try {
-      $env:LOCALAPPDATA = 'C:\Flo Cafe Fixture'
+      $env:LOCALAPPDATA = 'C:\Aromatic Cafe Fixture'
       $script:ChildUninstallerTimeoutSeconds = 1
 
       $result = Invoke-AromaticUninstall
@@ -155,13 +155,13 @@ Describe 'Flo Cafe Windows uninstaller' {
   }
 
   It 'blocks cleanup when child process inspection times out' {
-    $uninstallerExe = 'C:\Flo Cafe\uninstall.exe'
+    $uninstallerExe = 'C:\Aromatic Cafe\uninstall.exe'
     $entry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
-      InstallLocation = 'C:\Flo Cafe'
-      UninstallString = '"C:\Flo Cafe\uninstall.exe"'
+      InstallLocation = 'C:\Aromatic Cafe'
+      UninstallString = '"C:\Aromatic Cafe\uninstall.exe"'
     }
     $child = [pscustomobject]@{ Id = 9901; ExitCode = 0 }
     $child | Add-Member -MemberType ScriptMethod -Name WaitForExit -Value {
@@ -216,13 +216,13 @@ Describe 'Flo Cafe Windows uninstaller' {
   }
 
   It 'reports partial cleanup when a completed child exit code cannot be read' {
-    $uninstallerExe = 'C:\Flo Cafe\uninstall.exe'
+    $uninstallerExe = 'C:\Aromatic Cafe\uninstall.exe'
     $entry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
-      InstallLocation = 'C:\Flo Cafe'
-      UninstallString = '"C:\Flo Cafe\uninstall.exe"'
+      InstallLocation = 'C:\Aromatic Cafe'
+      UninstallString = '"C:\Aromatic Cafe\uninstall.exe"'
     }
     $child = [pscustomobject]@{ Id = 9899 }
     $child | Add-Member -MemberType ScriptMethod -Name WaitForExit -Value {
@@ -262,7 +262,7 @@ Describe 'Flo Cafe Windows uninstaller' {
       Mock Remove-Item { throw 'file is locked' }
       Mock Start-Sleep {}
 
-      $result = Invoke-Removal 'C:\Flo Cafe' 'install directory'
+      $result = Invoke-Removal 'C:\Aromatic Cafe' 'install directory'
 
       $result.Complete | Should -BeFalse
       $script:CleanupComplete | Should -BeFalse
@@ -312,9 +312,9 @@ Describe 'Flo Cafe Windows uninstaller' {
     Should -Invoke Remove-Item -Times 1 -Exactly -ParameterFilter { $LiteralPath -eq $entry.PSPath -and $Recurse -and $Force }
   }
 
-  It 'skips purge when Flo Cafe cannot be confirmed stopped' {
+  It 'skips purge when Aromatic Cafe cannot be confirmed stopped' {
     $entry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
       InstallLocation = ''
@@ -338,7 +338,7 @@ Describe 'Flo Cafe Windows uninstaller' {
 
   It 'keeps readable registry results when another uninstall root is inaccessible' {
     $readableEntry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
       InstallLocation = ''
@@ -369,20 +369,20 @@ Describe 'Flo Cafe Windows uninstaller' {
   }
 
   It 'processes and verifies every matching registry installation entry' {
-    $firstInstallPath = 'C:\Flo Cafe First'
-    $secondInstallPath = 'C:\Flo Cafe Second'
-    $firstUninstaller = 'C:\Flo Cafe First\uninstall.exe'
-    $secondUninstaller = 'C:\Flo Cafe Second\uninstall.exe'
+    $firstInstallPath = 'C:\Aromatic Cafe First'
+    $secondInstallPath = 'C:\Aromatic Cafe Second'
+    $firstUninstaller = 'C:\Aromatic Cafe First\uninstall.exe'
+    $secondUninstaller = 'C:\Aromatic Cafe Second\uninstall.exe'
     $testEntries = @(
       [pscustomobject]@{
-        DisplayName     = 'Flo Cafe'
+        DisplayName     = 'Aromatic Cafe'
         PSChildName     = 'AromaticFirst'
         PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\AromaticFirst'
         InstallLocation = $firstInstallPath
         UninstallString = "`"$firstUninstaller`""
       }
       [pscustomobject]@{
-        DisplayName     = 'Flo Cafe'
+        DisplayName     = 'Aromatic Cafe'
         PSChildName     = 'AromaticSecond'
         PSPath          = 'HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\AromaticSecond'
         InstallLocation = $secondInstallPath
@@ -433,10 +433,10 @@ Describe 'Flo Cafe Windows uninstaller' {
   It 'does not launch an uninstaller outside a known install location' {
     $outsideExe = 'C:\Users\attacker\uninstall.exe'
     $entry = [pscustomobject]@{
-      DisplayName     = 'Flo Cafe'
+      DisplayName     = 'Aromatic Cafe'
       PSChildName     = 'Aromatic'
       PSPath          = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Aromatic'
-      InstallLocation = 'C:\Program Files\Flo Cafe'
+      InstallLocation = 'C:\Program Files\Aromatic Cafe'
       UninstallString = "`"$outsideExe`""
     }
 

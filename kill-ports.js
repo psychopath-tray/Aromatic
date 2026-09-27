@@ -28,11 +28,11 @@ const isLinux = os.platform() === 'linux';
 // In dev: `electron .` with app.name = 'flo-desktop'
 // Packaged:
 //   - Linux: executableName "Aromatic" (snap/AppImage/deb binary path)
-//   - Mac/Windows: productName "Flo Cafe"
+//   - Mac/Windows: productName "Aromatic Cafe"
 const FLO_PATTERNS = [
   /(?:^|[\s\\/])Aromatic(?:\.exe)?(?:$|\s)/i,
   /(?:^|[\s\\/])Flo[\s_\-]*Cafe(?:\.exe)?(?:$|\s)/i,
-  /(?:^|[\s\\/])Flo Cafe\.app(?:[\\/]Contents[\\/]MacOS[\\/]Flo Cafe)?(?:$|\s)/i,
+  /(?:^|[\s\\/])Aromatic Cafe\.app(?:[\\/]Contents[\\/]MacOS[\\/]Aromatic Cafe)?(?:$|\s)/i,
   /(?:^|\s)com\.flo\.desktop(?:\.\S*)?(?:$|\s)/i,
   /(?:^|\s)flo[_\-]?pos(?:-service)?(?:\.exe)?(?:$|\s)/i,
   /(?:^|\s)electron(?:\s+\S+)*\s+--appName=flo[_\-]?desktop(?:$|\s)/i,

@@ -6,7 +6,7 @@
 header = """
 # Changelog
 
-All notable changes to Flo Cafe are documented here. Dates are release dates, not commit dates. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
+All notable changes to Aromatic Cafe are documented here. Dates are release dates, not commit dates. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 """
 # template for the changelog body
 body = """

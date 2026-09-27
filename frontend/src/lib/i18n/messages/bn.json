@@ -1975,7 +1975,7 @@
     "updateStatusCheckFailed": "আপডেট চেক ব্যর্থ হয়েছে",
     "updateStatusOffline": "অফলাইন",
     "updateStatusOfflineHint": "আপনি অফলাইনে আছেন বলে মনে হচ্ছে। পুনরায় সংযোগ করুন এবং আবার চেক করুন।",
-    "notCheckedYetHint": "Flo Cafe এখনও আপডেটের জন্য চেক করেনি।",
+    "notCheckedYetHint": "Aromatic Cafe এখনও আপডেটের জন্য চেক করেনি।",
     "devModeTitle": "উন্নয়ন নির্মাণ",
     "updateErrorManifestMissing": "এই বিল্ডের জন্য কোন আপডেট প্যাকেজ পাওয়া যায়নি।",
     "updateErrorDownloadFailed": "আপডেট ডাউনলোড ব্যর্থ হয়েছে. এটি পরবর্তী চেক পুনরায় চেষ্টা করবে.",

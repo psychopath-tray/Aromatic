@@ -570,8 +570,8 @@ const TR_INTENTIONAL_IDENTICAL = new Set<string>([
   'dashboard.exportXlsx', // format label "Excel (.xlsx)"
   'settings.paymentMethodUpi', // technical acronym (payment rail name)
   'common.appTitle', // brand name "Flo"
-  'common.brandName', // brand name "Flo Cafe"
-  'common.logoAlt', // brand name "Flo Cafe"
+  'common.brandName', // brand name "Aromatic Cafe"
+  'common.logoAlt', // brand name "Aromatic Cafe"
   'nav.portLabel', // technical term "Port"
   'nav.whatsapp', // product name "WhatsApp"
   'pos.addonPrice', // pure format "+{currency}{price}"

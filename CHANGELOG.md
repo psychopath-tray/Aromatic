@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Flo Cafe are documented here. Dates are release dates, not commit dates. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
+All notable changes to Aromatic Cafe are documented here. Dates are release dates, not commit dates. Format loosely follows [Keep a Changelog](https://keepachangelog.com/).
 
 ## [3.8.6] - 2026-09-13
 
@@ -425,7 +425,7 @@ All notable changes to Flo Cafe are documented here. Dates are release dates, no
 ### Added
 - Configurable order number format: owners/managers can set a custom prefix, toggle the date segment, and choose whether the sequence resets daily at store-timezone midnight or keeps climbing (`GET`/`PUT /settings/order-numbering`, new "Order Number Format" section in Settings).
 - KDS order type badges (dine-in/takeaway/delivery/online) on both the Kanban and Tabs views, plus a live-ticking elapsed-time display (HH:MM:SS) that updates every second instead of showing a static "Xm" snapshot.
-- macOS releases are now code-signed and notarized end to end (Developer ID Application cert + Apple notarization), fixing "'Flo Cafe' has been blocked because it may reduce your privacy... move it to the Bin" for anyone downloading the DMG/zip.
+- macOS releases are now code-signed and notarized end to end (Developer ID Application cert + Apple notarization), fixing "'Aromatic Cafe' has been blocked because it may reduce your privacy... move it to the Bin" for anyone downloading the DMG/zip.
 
 ### Fixed
 - LAN login: the desktop client now derives its API base URL from `window.location.origin` instead of a build-time-baked `NEXT_PUBLIC_API_URL`, so loading the app over LAN (e.g. `http://192.168.x.x:3001`) no longer fails with `ERR_CONNECTION_REFUSED`.
@@ -458,7 +458,7 @@ All notable changes to Flo Cafe are documented here. Dates are release dates, no
 ## [2.0.6] - 2026-07-24
 
 ### Fixed
-- Both standalone uninstaller scripts (`uninstall-windows.ps1`, `uninstall-macos.sh`) were purging the wrong folder: Electron's actual userData directory comes from package.json's top-level `name` (`flo-desktop`), not the electron-builder `productName` (`Flo Cafe`) used for the installer/shortcuts. `-PurgeData` / `--purge-data` could silently no-op against a folder that never held your database, backups, or Master PIN, making it look like your data survived an uninstall when it never had a chance to be touched in the first place. Both scripts now target the real folder (and still sweep the old name in case anything was ever written there).
+- Both standalone uninstaller scripts (`uninstall-windows.ps1`, `uninstall-macos.sh`) were purging the wrong folder: Electron's actual userData directory comes from package.json's top-level `name` (`flo-desktop`), not the electron-builder `productName` (`Aromatic Cafe`) used for the installer/shortcuts. `-PurgeData` / `--purge-data` could silently no-op against a folder that never held your database, backups, or Master PIN, making it look like your data survived an uninstall when it never had a chance to be touched in the first place. Both scripts now target the real folder (and still sweep the old name in case anything was ever written there).
 - Same scripts also used to report a path as "removed" right after attempting deletion, even if a locked file (most often the app not being fully quit yet) made it silently fail. They now wait for the app process to fully exit, verify the path is actually gone afterward, retry briefly, and warn explicitly if something's still stuck instead of falsely claiming success.
 - First-run `/setup` only checked whether a Master PIN was configured, not whether setup had already been completed — so on an already-initialized install it would let you fill out the entire multi-step wizard before rejecting at the very last step with "Setup already complete. This endpoint is disabled." It now checks up front and redirects straight to login if an owner already exists.
 
@@ -470,7 +470,7 @@ All notable changes to Flo Cafe are documented here. Dates are release dates, no
 ### Added
 - Linux release pipeline now ships a signed `.snap` to the Snap Store on every release tag, using the `core24` base with the GNOME extension (mirrors the `snapcrafters/signal-desktop` recipe). One-time repo secret `SNAPCRAFT_STORE_CREDENTIALS` (a snapcraft macaroon from `snapcraft export-login`) is all that is needed: the release workflow self-registers the snap name on first run and uploads subsequent revisions automatically.
 - Linux release job is now a matrix on `ubuntu-22.04` and `ubuntu-22.04-arm64`. Each entry builds and uploads its full target set (AppImage + deb + rpm + snap) for its host architecture, and both publish their snap to Snap Store under the same `Aromatic` name as a multi-arch revision. Net result of every release: `Aromatic-<version>-x86_64.AppImage` + `_amd64.deb` + `_x86_64.rpm` + `_amd64.snap` + the same quartet on `_arm64`.
-- AppImageHub catalog compatibility: `linux.artifactName` is now an explicit lowercase template (`Aromatic-<version>-<arch>.<ext>`) instead of electron-builder's default `Flo Cafe-<version>-<arch>.<ext>`, so the AppImageHub catalog's auto-discovery filename regex picks the binary up on its next release scan; the AppStream metainfo at `assets/com.flo.desktop.metainfo.xml` is now wired into the AppImage at the spec-correct `/usr/share/metainfo/` path via `linux.extraFiles` so the catalog CI's `appstreamcli validate` passes and GNOME Software / KDE Discover display the listing correctly.
+- AppImageHub catalog compatibility: `linux.artifactName` is now an explicit lowercase template (`Aromatic-<version>-<arch>.<ext>`) instead of electron-builder's default `Aromatic Cafe-<version>-<arch>.<ext>`, so the AppImageHub catalog's auto-discovery filename regex picks the binary up on its next release scan; the AppStream metainfo at `assets/com.flo.desktop.metainfo.xml` is now wired into the AppImage at the spec-correct `/usr/share/metainfo/` path via `linux.extraFiles` so the catalog CI's `appstreamcli validate` passes and GNOME Software / KDE Discover display the listing correctly.
 
 ### Fixed
 - Linux snap builds under strict confinement were silently broken: the legacy `build.snap` block replaced electron-builder's default plug set, leaving the snap without `home`, `x11`, `wayland`, or `network-bind`. Result was that the Express server on `0.0.0.0:3001` and the KDS server on `0.0.0.0:3002` couldn't bind under confined snap, and the renderer couldn't open a window on X11 or Wayland. Plug list now uses `"default"` to extend instead of replace, and adds `network-bind` and `screen-inhibit-control` explicitly.

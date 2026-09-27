@@ -100,7 +100,7 @@ Module._load = function (request: string, parent: unknown, isMain: boolean) {
   if (request === './db') {
     const fakeDb = {
       prepare: (sql: string) => ({
-        all: () => (sql.includes('settings') ? [{ key: 'business_name', value: 'Flo Cafe' }] : [{ id: 1, name: 'Thermal Kitchen' }]),
+        all: () => (sql.includes('settings') ? [{ key: 'business_name', value: 'Aromatic Cafe' }] : [{ id: 1, name: 'Thermal Kitchen' }]),
         get: () => ({ bill_count: 5, revenue: 120.50, covers: 12, count: 2 }),
         run: () => ({ changes: 1 }),
       }),

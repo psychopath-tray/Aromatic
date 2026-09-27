@@ -242,16 +242,16 @@
     "test:migration-registry": "node tests/run-electron-node-test.cjs tests/migration-registry.test.ts"
   },
   "author": {
-    "name": "Flo",
-    "email": "support@flo.local"
+    "name": "Aromatic",
+    "email": "aromatic@flo.local"
   },
   "homepage": "https://flopos.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FreeOpenSourcePOS/Aromatic.git"
+    "url": "https://github.com/psychopath-tray/Aromatic.git"
   },
   "bugs": {
-    "url": "https://github.com/FreeOpenSourcePOS/Aromatic/issues"
+    "url": "https://github.com/psychopath-tray/Aromatic/issues"
   },
   "license": "MIT",
   "overrides": {
@@ -309,7 +309,7 @@
   },
   "build": {
     "appId": "com.flo.desktop",
-    "productName": "Flo Cafe",
+    "productName": "Aromatic Cafe",
     "icon": "assets/icon-512.png",
     "afterPack": "scripts/afterPack.js",
     "asar": true,
@@ -366,7 +366,7 @@
       "publisherDisplayName": "Codify Apps Private Limited",
       "identityName": "CodifyAppsPrivateLimited.Aromatic",
       "publisher": "CN=34AFD24D-EC88-44B8-B309-08BB8A6BB5F7",
-      "displayName": "Flo Cafe",
+      "displayName": "Aromatic Cafe",
       "languages": [
         "en-US"
       ]
@@ -398,7 +398,7 @@
       "notarize": true,
       "artifactName": "Aromatic-${version}-mac-${arch}.${ext}",
       "extendInfo": {
-        "NSLocalNetworkUsageDescription": "Flo Cafe connects to thermal printers, KDS displays, and the Waiter & Table Terminal on your local network.",
+        "NSLocalNetworkUsageDescription": "Aromatic Cafe connects to thermal printers, KDS displays, and the Waiter & Table Terminal on your local network.",
         "NSBonjourServices": [
           "_http._tcp"
         ]
@@ -416,7 +416,7 @@
       "type": "distribution",
       "extendInfo": {
         "ITSAppUsesNonExemptEncryption": false,
-        "NSLocalNetworkUsageDescription": "Flo Cafe connects to thermal printers, KDS displays, and the Waiter & Table Terminal on your local network.",
+        "NSLocalNetworkUsageDescription": "Aromatic Cafe connects to thermal printers, KDS displays, and the Waiter & Table Terminal on your local network.",
         "NSBonjourServices": [
           "_http._tcp"
         ]
@@ -481,7 +481,7 @@
       ],
       "desktop": {
         "entry": {
-          "Name": "Flo Cafe",
+          "Name": "Aromatic Cafe",
           "Comment": "Free, open-source POS for cafes and restaurants",
           "GenericName": "Point of Sale",
           "Keywords": "pos;point of sale;restaurant;cafe;billing;invoice;",

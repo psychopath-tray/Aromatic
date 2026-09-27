@@ -72,7 +72,7 @@ function runTest() {
     'node /Users/dev/Aromatic/dist/index.js',
     'node /Users/dev/Aromatic/dist/main/index.js',
     'node C:\\Aromatic\\dist\\main\\index.js',
-    '/Applications/Flo Cafe.app/Contents/MacOS/Flo Cafe',
+    '/Applications/Aromatic Cafe.app/Contents/MacOS/Aromatic Cafe',
     '/usr/bin/Aromatic --no-sandbox',
     'electron . --appName=flo-desktop',
     'node /path/to/Aromatic/dev-server.js',

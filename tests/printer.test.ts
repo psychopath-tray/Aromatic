@@ -1054,7 +1054,7 @@ console.log('\n✅ Test 11: IR country thermal receipt financial-line preservati
   assert('real production IR setup produces ریال currency symbol', realIrCurrencySymbol === 'ریال');
 
   const irBusiness = {
-    name: 'Flo Cafe Tehran',
+    name: 'Aromatic Cafe Tehran',
     country: 'IR',
     currency: 'IRR',
     currency_symbol: realIrCurrencySymbol,
@@ -1176,7 +1176,7 @@ console.log('\n✅ Test 11: IR country thermal receipt financial-line preservati
   const { generateBillHtml } = frontendModules.webPrint;
 
   const frontendTenant = {
-    business_name: 'Flo Cafe Tehran',
+    business_name: 'Aromatic Cafe Tehran',
     country: 'IR',
     currency: 'IRR',
   };
